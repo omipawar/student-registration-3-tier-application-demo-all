@@ -3,9 +3,11 @@ kind: ConfigMap
 metadata:
   name: backend-config
 data:
-  DATASOURCE_URL: jdbc:mysql://13.219.75.105:3306/student_db?createDatabaseIfNotExist=true
-  DATASOURCE_USER: admin
+  SPRING_DATASOURCE_URL: jdbc:mysql://13.219.75.105:3306/student_db?createDatabaseIfNotExist=true
+  SPRING_DATASOURCE_USERNAME: admin
   FRONTEND_URL: http://localhost:5173
+
+
 
 
 
