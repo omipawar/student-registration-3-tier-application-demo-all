@@ -59,6 +59,10 @@ terraform init
 ````
 ---
 **Cluster Login**
+- first login into aws
+````
+aws configure
+````
 ````
 aws eks update-kubeconfig --name cbz-cluster
 ````
