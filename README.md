@@ -14,6 +14,24 @@ git clone https://github.com/abhipraydhoble/student-registration.git
 cd student-registration/infra
 ````
 
+
+**Terraform Installation:Ubuntu**
+````
+wget -O- https://apt.releases.hashicorp.com/gpg | sudo gpg --dearmor -o /usr/share/keyrings/hashicorp-archive-keyring.gpg
+echo "deb [signed-by=/usr/share/keyrings/hashicorp-archive-keyring.gpg] https://apt.releases.hashicorp.com $(lsb_release -cs) main" | sudo tee /etc/apt/sources.list.d/hashicorp.list
+sudo apt update && sudo apt install terraform -y
+````
+
+
+#### Changes:
+- **main.tf** instance-type
+- **provider.tf** add provider details 
+
+**Initialize terraform**
+````
+terraform init
+````
+---
 **AWS CLI Installation:**
 
 ````
@@ -25,12 +43,15 @@ sudo ./aws/install
 ````
 aws --version
 ````
-**Terraform Installation:Ubuntu**
+**Cluster Login**
+- first login into aws
 ````
-wget -O- https://apt.releases.hashicorp.com/gpg | sudo gpg --dearmor -o /usr/share/keyrings/hashicorp-archive-keyring.gpg
-echo "deb [signed-by=/usr/share/keyrings/hashicorp-archive-keyring.gpg] https://apt.releases.hashicorp.com $(lsb_release -cs) main" | sudo tee /etc/apt/sources.list.d/hashicorp.list
-sudo apt update && sudo apt install terraform -y
+aws configure
 ````
+````
+aws eks update-kubeconfig --name cbz-cluster
+````
+---
 **:Install kubectl**
 
 ````
@@ -48,24 +69,6 @@ mv ./kubectl ~/.local/bin/kubectl
 kubectl version --client
 ````
 
-
-#### Changes:
-- **main.tf** instance-type
-- **provider.tf** add provider details 
-
-**Initialize terraform**
-````
-terraform init
-````
----
-**Cluster Login**
-- first login into aws
-````
-aws configure
-````
-````
-aws eks update-kubeconfig --name cbz-cluster
-````
 
 
 ### 1. Setup MariaDB 
