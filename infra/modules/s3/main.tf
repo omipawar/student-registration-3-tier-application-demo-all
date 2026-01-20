@@ -1,4 +1,4 @@
-# Create an S3 bucket
+<!---# Create an S3 bucket
 resource "aws_s3_bucket" "cbz_bucket" {
   bucket = "cbz-frontend-project-bux" # Replace with a globally unique bucket name
 
@@ -45,4 +45,4 @@ resource "aws_s3_bucket_policy" "static_website_policy" {
 output "website_endpoint" {
   value       = aws_s3_bucket.cbz_bucket.website_endpoint
   description = "The URL to access the static website"
-}
+}-->
