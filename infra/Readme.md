@@ -2,5 +2,7 @@
 
 #### Changes:
 - **main.tf** instance-type
-- **main.tf** bucket-name
+- **provider.tf** add provider details 
+
+
 
