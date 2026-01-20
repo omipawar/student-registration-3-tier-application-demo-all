@@ -266,12 +266,12 @@ pipeline {
                     sh """
                         sed -i 's|image: .*|image: ${DOCKER_IMAGE}:${IMAGE_TAG}|' backend/deployment.yaml
 
-                        kubectl apply -n ${KUBE_NAMESPACE} -f backend/configmap.yaml
+                     
                         kubectl apply -n ${KUBE_NAMESPACE} -f backend/secret.yaml
                         kubectl apply -n ${KUBE_NAMESPACE} -f backend/deployment.yaml
                         kubectl apply -n ${KUBE_NAMESPACE} -f backend/service.yaml
 
-                        kubectl rollout status deployment/backend -n ${KUBE_NAMESPACE}
+                     
                     """
                 }
             }
@@ -280,6 +280,7 @@ pipeline {
 
 }
 ````
+
 
 
 
